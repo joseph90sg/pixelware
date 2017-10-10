@@ -24,10 +24,4 @@ public class Condition implements Serializable{
 	public void setIcon(String icon) {
 		this.icon = icon;
 	}
-	
-	@Override
-	public String toString() {
-		return "Condition [text=" + text + ", icon=" + icon + "]";
-	}
-	
 }

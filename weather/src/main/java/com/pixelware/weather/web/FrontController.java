@@ -8,7 +8,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pixelware.weather.modelo.Apixu;
-import com.pixelware.weather.modelo.Current;
 
 /*
  * Controlador MVC de Spring.
@@ -20,12 +19,26 @@ public class FrontController {
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String index(Model modelo){
-		RestTemplate restTemplate = new RestTemplate();
-		Apixu apixu = restTemplate.getForObject("http://api.apixu.com/v1/current.json?key=3d6fcb9d300342de8d2104143170610&q=cordoba", Apixu.class);
-		System.out.println(apixu.toString());
-		modelo.addAttribute("apixu",apixu);
+		
+		modelo.addAttribute("ciudad", new FormCiudad());
 		
 		return "index";
 	}
 
+	@RequestMapping(value="/", method=RequestMethod.POST)
+	public ModelAndView temperatura(FormCiudad formCiudad){
+		
+		String ciudad = formCiudad.getCiudad();
+		String url = "http://api.apixu.com/v1/current.json?key=3d6fcb9d300342de8d2104143170610&q=" + ciudad;
+		
+		RestTemplate restTemplate = new RestTemplate();
+		Apixu apixu = restTemplate.getForObject(url, Apixu.class);
+		
+		ModelAndView modelo = new ModelAndView("temperatura");
+		modelo.addObject("ciudad", new FormCiudad());
+		
+		modelo.addObject("apixu",apixu);
+		
+		return modelo;
+	}
 }

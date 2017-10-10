@@ -7,20 +7,32 @@
 <title>PixelWeather</title>
 </head>
 <body>
-	<h2>PixelWeather</h2>
+	<header class="jumbotron">
+		<h2>PixelWeather</h2>
+	</header>
+	<div class="container">
+		<section>
+			<form:form method="post" modelAttribute="ciudad">
 
-	<form:form method="post" modelAttribute="ciudad">
+				<form:label path="ciudad">Ciudad</form:label>
+				<form:input path="ciudad" size="50" maxlength="50" />
 
-		<form:label path="ciudad">Ciudad</form:label>
-		<form:input path="ciudad" size="50" maxlength="50" />
+				<br />
+				<br />
 
-		<br />
-		<br />
+				<input type="submit" value="   Buscar Temperatura  ">
 
-		<input type="submit" value="   Buscar Temperatura  ">
+			</form:form>
 
-	</form:form>
+		</section>
 
 
+
+	</div>
+
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+		crossorigin="anonymous">
 </body>
 </html>

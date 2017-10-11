@@ -25,11 +25,11 @@
 					<input type="submit" value="   Buscar Temperatura  ">
 		
 				</form:form>
-		<br />
 					<br />
-		
+					<br />
+					<strong>${error}</strong>
 				<p>
-					<strong>${apixu.location.name}</strong> ${apixu.current.temp_c}&#186;C
+					<strong>${apixu.location.name}</strong> ${apixu.current.temp_c}${cent}
 				</p>
 					<img src="${apixu.current.condition.icon}" />
 			

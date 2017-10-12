@@ -1,0 +1,22 @@
+Pasos para desplegar en heroku
+
+En el pom.xml se debe añadir el plugin de Heroku
+
+       <plugin>
+          <groupId>com.heroku.sdk</groupId>
+          <artifactId>heroku-maven-plugin</artifactId>
+          <version>0.5.1</version>
+          <configuration>
+            <appName>   NOMBRE DE LA APLICACION   </appName>
+          </configuration>
+        </plugin>
+
+Con todo añadido, Run as > Maven build... y "clean install".
+
+Cuando el proyecto este terminado y se quiera desplegar desplegar:
+Ejecutar Run as > Maven build...
+1.- En la pestaña Main
+    goals: heroku:deploy-war
+2.- En la pestaña Environment > new
+    name: HEROKU_API_KEY
+    value: (lo que imprima por consola heroku auth:token)

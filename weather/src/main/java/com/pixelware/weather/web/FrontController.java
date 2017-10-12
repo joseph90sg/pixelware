@@ -43,7 +43,7 @@ public class FrontController {
 			modelo.addObject("apixu", apixu);
 			modelo.addObject("cent", "&#186;C");
 		} catch (HttpClientErrorException e) {
-			
+			modelo = new ModelAndView("error");
 			modelo.addObject("ciudad", new FormCiudad());
 			String err = "";
 			if(ciudad.matches("")){

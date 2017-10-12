@@ -5,6 +5,11 @@
 <html>
 <head>
 <title>PixelWeather</title>
+<link rel="icon" 
+      type="image/png" 
+      href="//cdn.apixu.com/weather/64x64/day/113.png" />
+<link rel="stylesheet" href="resources/styles/bootstrap.min.css" />
+<link rel="stylesheet" href="resources/styles/bootstrap-theme.min.css" />
 </head>
 <body>
 	<header class="jumbotron">
@@ -15,12 +20,12 @@
 			<form:form method="post" modelAttribute="ciudad">
 
 				<form:label path="ciudad">Ciudad</form:label>
-				<form:input path="ciudad" size="50" maxlength="50" />
+				<form:input path="ciudad" size="50" maxlength="50" class="form-control"/>
 
 				<br />
 				<br />
 
-				<input type="submit" value="   Buscar Temperatura  ">
+				<input type="submit" value="   Buscar Temperatura  " class="btn btn-primary">
 
 			</form:form>
 

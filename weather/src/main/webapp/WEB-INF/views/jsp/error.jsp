@@ -11,21 +11,9 @@
 <style type="text/css">
 #error{
 	color: #DE5448;
+	font-size: 25px;
 }
-#city{
-	font-size: 45px;
-}
-#temp{
-	font-size: 70px;
-	margin-left: 10%;
-}
-img{
-	height: 275px;
-	width: 275px;
-}
-#result{
-	margin-left: 15%;
-}
+
 </style>
 </head>
 <body>
@@ -52,13 +40,6 @@ img{
 		
 		<strong id="error">${error}</strong>
 		
-
-		<div id="result">
-			<span id="city">${apixu.location.name}</span><br />
-			<span id="temp">${apixu.current.temp_c}${cent}</span>
-		
-			<img src="${apixu.current.condition.icon}" />
-		</div>
 	</div>
 
 	<link rel="stylesheet"
